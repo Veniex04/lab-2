@@ -45,3 +45,59 @@ int main (){
   	std:cout << "2. Create new Directory\n";
   	std::cout <<"3. Change the working Directory\n";
   	std::cout <<"4.Exit\n";
+}
+
+void listFiles(){
+	int option;
+	std::string extension, name;
+	
+	std::cout << "\t\tLIST FILE DETAILS\n\t-------------------------\n";
+	std::cout << "1. List All Files\n";
+	std::cout << "2. List Files by Extension\n";
+	std::cout << "3. List Files by Name Pattern\n";
+	std::cin >> option;
+	
+	switch (option){
+		case1:
+			for (const auto& entry : fs::directory_iterator(fs::current_path())) {
+				std::cout << entry.path().filename().string() << "\n";
+			}
+			break;
+		case2:
+		    std::cout << "Enter the extension (e.g., .txt): ";
+			std::cin >> extension;
+			for (const auto& entry : fs::directory_iterator(fs::current_path())) {
+				if (entry.path().extension() == extension) {
+					std::cout << entry.path().filename().string() <<"\n";
+				}
+			}	
+			break;
+		case3:
+			std::cout << "Enter the name pattern (e.g., file*): ";
+			std::cin >> name;
+			for (const auto& entry : fs::directory_iterator(fs::current_pant))
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
